@@ -1,0 +1,12 @@
+[Unit]
+Description=Prometheus exporter for IC node status
+Documentation=https://github.com/virtualhive/ic-node-status-prometheus-exporter
+
+[Service]
+User=icnodes
+EnvironmentFile=/home/icnodes/ic-node-status-prometheus-exporter/.env
+ExecStart=/usr/bin/python3 /home/icnodes/ic-node-status-prometheus-exporter/ic-node-status-prometheus-exporter.py
+TimeoutStopSec=20s
+
+[Install]
+WantedBy=multi-user.target
